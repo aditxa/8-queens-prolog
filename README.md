@@ -28,7 +28,7 @@ This repository contains an efficient Prolog solution to the classic 8 Queens Pr
 ## Code Explanation
 The core of the solution revolves around using the Constraint Logic Programming over Finite Domains (CLP(FD)) library in Prolog to efficiently handle constraints and backtracking. Here's the provided code with a brief explanation:
 
-    ```prolog
+      
         use_module(library(clpfd)).
 
         eight_queens(Queens) :-
@@ -65,36 +65,6 @@ The core of the solution revolves around using the Constraint Logic Programming 
 - **eight_queens/1:** The main predicate that sets up the queens and their constraints.
 - **safe/1 and safe/3:** Helper predicates that ensure no two queens threaten each other by checking rows, columns, and diagonals.
 
-## Code Explanation
-The core of the solution revolves around using the Constraint Logic Programming over Finite Domains (CLP(FD)) library in Prolog to efficiently handle constraints and backtracking. Here's the provided code with a brief explanation:
-
-    ```prolog
-        use_module(library(clpfd)).
-
-        eight_queens(Queens) :-
-            Queens = [Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8],
-            Queens ins 1..8,
-            Q1 #\= Q2, Q1 #\= Q3, Q1 #\= Q4, Q1 #\= Q5, Q1  #\=  Q6, Q1 #\= Q7, Q1 #\= Q8,
-            Q2 #\= Q3, Q2 #\= Q4, Q2 #\= Q5, Q2 #\= Q6, Q2  #\=  Q7, Q2 #\= Q8,
-            Q3 #\= Q4, Q3 #\= Q5, Q3 #\= Q6, Q3 #\= Q7, Q3  #\= Q8,
-            Q4 #\= Q5, Q4 #\= Q6, Q4 #\= Q7, Q4 #\= Q8,
-            Q5 #\= Q6, Q5 #\= Q7, Q5 #\= Q8,
-            Q6 #\= Q7, Q6 #\= Q8,
-            Q7 #\= Q8,
-            safe(Queens),
-            label(Queens).
-
-        safe([]).
-        safe([Q|Qs]) :-
-            safe(Qs, Q, 1),
-            safe(Qs).
-
-        safe([], _, _).
-        safe([Q|Qs], Q0, N) :-
-            Q0 #\= Q,
-            abs(Q0 - Q) #\= N,
-            D1 #= N + 1,
-            safe(Qs, Q0, D1).
         
 
     
