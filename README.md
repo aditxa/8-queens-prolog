@@ -12,6 +12,7 @@ This repository contains an efficient Prolog solution to the classic 8 Queens Pr
 - **Clarity:** The code is written in a clear and concise manner, making it easy to understand and modify.
 - **Flexibility:** The solution can be adapted to similar problems or extended to larger chessboards with minimal changes.
 
+
 ## Usage
 1. **Clone the repository:**
    ```bash
